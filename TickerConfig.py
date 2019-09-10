@@ -6,27 +6,22 @@
 # 刷票模式：1=刷票 2=候补+刷票
 TICKET_TYPE = 2
 
-# 候补最晚兑现日期，目前软件为捡漏加自动候补，所以这个值一定要填，并且这个日期一定要填小于最长订票时间(30天)
-# 格式为日期+小时+分
-# 举例： 比如今天才可以买10.1号的票，比如你那个发车是10.1号上午两点，你兑现时间写到10.1晚上22点？
-# t("#fromDate").val() + "#" + t("#dafaultTime").html().replace("时", "") + "#" + t("#dafaultMinutes").html().replace("分", ""),
-J_Z_PARAM = "2019-09-28#22#59"
-
 # 出发日期(list) "2018-01-06", "2018-01-07"
 STATION_DATES = [
-    "2019-10-01"
+    "2019-09-30"
 ]
 
 # 填入需要购买的车次(list)，"G1353"
 STATION_TRAINS = [
     "",
+    "",
 ]
 
 # 出发城市，比如深圳北，就填深圳就搜得到
-FROM_STATION = "深圳北"
+FROM_STATION = ""
 
 # 到达城市 比如深圳北，就填深圳就搜得到
-TO_STATION = "隆回"
+TO_STATION = ""
 
 # 座位(list) 多个座位ex:
 # "商务座",
@@ -39,7 +34,7 @@ TO_STATION = "隆回"
 # "无座",
 # "动卧",
 SET_TYPE = [
-    "二等座",
+    "",
 ]
 
 # 当余票小于乘车人，如果选择优先提交，则删减联系人和余票数一致在提交
@@ -50,6 +45,7 @@ IS_MORE_TICKET = True
 # - "张三"
 # - "李四"
 TICKET_PEOPLES = [
+    "",
     "",
 ]
 
@@ -85,11 +81,12 @@ EMAIL_CONF = {
     "host": "",
 }
 
-# 是否开启 pushbear 微信提醒， 使用前需要前往 http://pushbear.ftqq.com 扫码绑定获取 send_key 并关注获得抢票结果通知的公众号
-PUSHBEAR_CONF = {
-    "is_pushbear": False,
-    "send_key": ""
+# 是否开启 server酱 微信提醒， 使用前需要前往 http://sc.ftqq.com/3.version 扫码绑定获取 SECRET 并关注获得抢票结果通知的公众号
+SERVER_CHAN_CONF = {
+    "is_server_chan": False,
+    "secret": ""
 }
+
 
 # 是否开启cdn查询，可以更快的检测票票 1为开启，2为关闭
 IS_CDN = 1
@@ -111,7 +108,6 @@ IS_PROXY = 0
 
 # 预售放票时间, 如果是捡漏模式，可以忽略此操作
 OPEN_TIME = "13:00:00"
-
 # 1=使用selenium获取devicesID
 # 2=使用网页端/otn/HttpZF/logdevice获取devicesId，这个接口的算法目前可能有点问题，如果登录一直302的请改为配置1
 COOKIE_TYPE = 1
@@ -132,4 +128,4 @@ PASSENGER_TICKER_STR = {
 }
 
 # 软件版本
-RE_VERSION = "1.1.105"
+RE_VERSION = "1.1.108"
